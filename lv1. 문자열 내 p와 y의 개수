@@ -1,0 +1,53 @@
+class Solution {
+    boolean solution(String s) {
+        boolean answer = true;
+        String[] sss = s.split("(?<=.)");
+        int cnt1 = 0;
+        int cnt2 = 0;
+        for(int i=0; i<sss.length; i++){
+            if(sss[i].equals("p")||sss[i].equals("P")){
+                cnt1++;
+            } else if(sss[i].equals("y")||sss[i].equals("Y")){
+                cnt2++;
+            }
+        }
+        
+        if(cnt1 == cnt2){
+            answer = true;
+        } else{
+            answer = false;
+        }
+        return answer;
+    }
+}
+
+// 다른 사람 풀이(내가 원하는 방법)
+class Solution {
+    boolean solution(String s) {
+        s = s.toLowerCase();
+        int count = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+
+            if (s.charAt(i) == 'p')
+                count++;
+            else if (s.charAt(i) == 'y')
+                count--;
+        }
+
+        if (count == 0)
+            return true;
+        else
+            return false;
+    }
+}
+
+
+// 람다식 신박한 방법
+class Solution {
+    boolean solution(String s) {
+        s = s.toUpperCase();
+
+        return s.chars().filter( e -> 'P'== e).count() == s.chars().filter( e -> 'Y'== e).count();
+    }
+}
