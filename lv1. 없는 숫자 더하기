@@ -1,0 +1,23 @@
+class Solution {
+    public int solution(int[] numbers) {
+        int answer = 45;
+        
+        for(int i = 0; i < numbers.length; i++){
+            answer -= numbers[i];
+        }
+        
+        return answer;
+    }
+}
+
+// 다른 사람 풀이 향상된 for문 이용법
+
+class Solution {
+    public int solution(int[] numbers) {
+        int sum = 45;
+        for (int i : numbers) {
+            sum -= i;
+        }
+        return sum;
+    }
+}
