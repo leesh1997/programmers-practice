@@ -1,0 +1,23 @@
+import java.util.Arrays;
+
+class Solution {
+    public String solution(String s) {
+        char ch[] = s.toCharArray();
+        Arrays.sort(ch);
+        String answer = "";
+        for(int i = s.length() -1 ; i > -1 ; --i)
+        {
+            answer += ch[i];
+        }
+        return answer;
+    }
+}
+
+// 다른 사람 풀이
+
+public class ReverseStr {
+    public String reverseStr(String str){
+        char[] sol = str.toCharArray();
+    Arrays.sort(sol);
+    return new StringBuilder(new String(sol)).reverse().toString();
+    }
