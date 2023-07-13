@@ -1,0 +1,26 @@
+class Solution {
+    public String solution(String phone_number) {
+        String answer = "";
+        String[] num = phone_number.split("");
+        
+        for(int i = 0; i < num.length; i++){
+            if(i < num.length-4){
+                num[i] = "*";
+            }
+            answer += num[i];
+        }
+        return answer;
+    }
+}
+
+// 다른 사람 풀이
+
+class Solution {
+  public String solution(String phone_number) {
+     char[] ch = phone_number.toCharArray();
+     for(int i = 0; i < ch.length - 4; i ++){
+         ch[i] = '*';
+     }
+     return String.valueOf(ch);
+  }
+}
