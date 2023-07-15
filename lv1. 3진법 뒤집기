@@ -1,0 +1,35 @@
+import java.util.*;
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        ArrayList<Integer> temp = new ArrayList<Integer>();
+        while(n != 0){
+            temp.add(n%3);
+            n /= 3;
+        }
+        int gop = 1;
+        for(int i = temp.size()-1; i >= 0; i--){
+            answer += temp.get(i) * gop;
+            gop *= 3;
+            // System.out.println(answer);
+        }
+        return answer;
+    }
+}
+
+// 다른 사람 풀이
+
+class Solution {
+    public int solution(int n) {
+        String a = "";
+
+        while(n > 0){
+            a = (n % 3) + a;
+            n /= 3;
+        }
+        a = new StringBuilder(a).reverse().toString();
+
+
+        return Integer.parseInt(a,3);
+    }
+}
