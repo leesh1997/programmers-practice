@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class Solution {
+    public int[] solution(int []arr) {
+        int idx = 0;
+        int[] temp = new int[arr.length];
+        for(int i = 0; i < arr.length-1; i++){
+            if(arr[i] != arr[i+1]){
+                temp[idx++] = arr[i];
+            }
+        }
+        
+        temp[idx++] = arr[arr.length-1];
+        int[] answer = new int[idx];
+        for(int i = 0; i < idx; i++){
+                answer[i] = temp[i];
+        }
+        return answer;
+    }
+}
+
+// 다른 사람 풀이 preNum = 10 으로 무의미한 수를 넣어두고 한 것이 인상 깊었다.
+
+public class Solution {
+    public int[] solution(int []arr) {
+        ArrayList<Integer> tempList = new ArrayList<Integer>();
+        int preNum = 10;
+        for(int num : arr) {
+            if(preNum != num)
+                tempList.add(num);
+            preNum = num;
+        }       
+        int[] answer = new int[tempList.size()];
+        for(int i=0; i<answer.length; i++) {
+            answer[i] = tempList.get(i).intValue();
+        }
+        return answer;
+    }
+}
