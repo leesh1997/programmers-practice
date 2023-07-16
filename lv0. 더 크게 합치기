@@ -1,0 +1,6 @@
+def solution(a, b):
+    answer1 = str(a) + str(b)
+    answer2 = str(b) + str(a)
+    return max(int(answer1), int(answer2))
+
+// 파이썬 연습
