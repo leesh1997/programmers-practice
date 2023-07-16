@@ -1,0 +1,7 @@
+a, b = input().strip().split(' ')
+b = int(b)
+if(1<= len(a)<= 10):
+    for i in range(b):
+        print(a, end = "")
+
+// 파이썬 연습
