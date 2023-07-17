@@ -1,0 +1,48 @@
+class Solution {
+    public int solution(int[] d, int budget) {
+        int answer = 0;
+        
+        for(int i = 0; i < d.length; i++){
+            for(int j = i + 1; j < d.length; j++){
+                if(d[i] > d[j]){
+                    int temp = d[i];
+                    d[i] = d[j];
+                    d[j] = temp;
+                }
+            }
+        }
+        
+        for(int i = 0; i < d.length; i++){
+            if(budget < d[i]){
+                break;
+            }
+            budget -= d[i];
+            System.out.println(budget);
+            answer++;
+        }
+        
+        return answer;
+    }
+}
+
+// 다른 사람 풀이 (Arrays.sort 사용)
+
+import java.util.*;
+
+class Solution {
+  public int solution(int[] d, int budget) {
+      int answer = 0;
+
+        Arrays.sort(d);
+
+        for (int i = 0; i < d.length; i++) {
+            budget -= d[i];
+
+            if (budget < 0) break;
+
+            answer++;
+        }
+
+        return answer;
+  }
+}
