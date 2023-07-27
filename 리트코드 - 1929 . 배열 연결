@@ -1,0 +1,16 @@
+class Solution {
+    public int[] getConcatenation(int[] nums) {
+        int[] num = new int[2 * nums.length];
+        int idx = 0;
+        for(int i = 0 ; i < num.length; i++){
+            if(idx == nums.length){
+                idx = 0;
+                num[i] = nums[idx];
+            } else {
+                num[i] = nums[idx];
+            }
+            idx++;
+        }
+        return num;
+    }
+}
