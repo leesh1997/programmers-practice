@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class 이항계수1_11050 {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		int n = sc.nextInt();
+		int k = sc.nextInt();
+
+		int com = 0;
+
+		if (k < 0) {
+			com = 0;
+		} else if (0 <= k && k <= n) {
+			com = fac(n) / (fac(k) * (fac(n - k)));
+
+		} else if (k > n) {
+			com = 0;
+		}
+
+		System.out.println(com);
+
+	}
+
+	public static int fac(int a) {
+		int f = 1;
+		for (int i = a; i > 1; i--) {
+			f *= i;
+		}
+		return f;
+	}
+
+}
