@@ -1,0 +1,34 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class 수열_2559 {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		
+		int day = sc.nextInt();
+		int sum = sc.nextInt();
+		int[] temp = new int[day];
+		int[] su = new int[day-sum+1];
+
+		for(int i = 0; i < day; i++) {
+			temp[i] = sc.nextInt();
+		}
+		
+		for(int i = 0; i < su.length; i++) {
+			for(int j = i; j < i + sum;) {
+				su[i] += temp[j];
+				if(j >= temp.length) {
+					break;
+				} else {
+					j++;
+				}
+			}
+		}
+			Arrays.sort(su);
+			System.out.print(su[su.length-1]);
+		
+	}
+
+}
