@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class 주사위세개_2480 {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+
+		if (a != b && b != c && a != c) {
+			int max = max(a, b);
+			max = max(max, c);
+			System.out.println(max * 100);
+		} else if (a == b && b == c) {
+			System.out.println(10000 + a * 1000);
+		} else if (a == b && b != c || a != b && b == c || a == c && a != b) {
+			int find = find(a, b, c);
+			System.out.println(1000 + find * 100);
+		}
+
+	}
+
+	private static int max(int a, int b) {
+
+		if (a < b) {
+			a = b;
+		}
+		return a;
+	}
+
+	private static int find(int a, int b, int c) {
+		int find = 0;
+
+		if (a == b && b != c) {
+			find = a;
+		} else if (a != b && b == c) {
+			find = b;
+		} else if (a == c && a != b) {
+			find = a;
+		}
+
+		return find;
+	}
+
+}
