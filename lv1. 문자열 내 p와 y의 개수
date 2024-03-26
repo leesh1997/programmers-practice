@@ -21,6 +21,44 @@ class Solution {
     }
 }
 
+// 나의 다른 풀이
+
+class Solution {
+    boolean solution(String s) {
+        boolean answer = true;
+        String[] word = s.split("");
+        int cntp = 0;
+        int cnty = 0;
+        
+        for(int i = 0; i < word.length; i++)
+        {
+            if(word[i].equals("p"))
+            {
+                cntp++;
+            }
+            else if(word[i].equals("P"))
+            {
+                cntp++;
+            }
+            else if(word[i].equals("y"))
+            {
+                cnty++;
+            }
+            else if(word[i].equals("Y"))
+            {
+                cnty++;
+            }
+        }
+        if (cntp != cnty)
+        {
+            answer = false;
+        }
+        // System.out.printf("cntp = %d, cnty = %d\n", cntp, cnty);
+        // compareToIgnoreCase() 이용하면 대소문자 구분 없이 가능하다.
+        return answer;
+    }
+}
+
 // 다른 사람 풀이(내가 원하는 방법)
 class Solution {
     boolean solution(String s) {
