@@ -19,6 +19,34 @@ public class Solution {
     }
 }
 
+// 복습
+
+import java.util.*;
+
+public class Solution {
+    public int[] solution(int []arr) {
+        int[] temp = new int[arr.length];
+        int idx = 0;
+        int cnt = 1;
+        
+        for(int i = 0; i < arr.length - 1; i++)
+        {
+            if (arr[i] != arr[i + 1])
+            {
+                temp[idx++] = arr[i];
+                cnt++;
+            }
+        }
+        temp[idx] = arr[arr.length - 1];
+        int[] answer = new int[cnt];
+        for (int i = 0; i < answer.length; i++)
+        {
+            answer[i] = temp[i];
+        }        
+        return answer;
+    }
+}
+
 // 다른 사람 풀이 preNum = 10 으로 무의미한 수를 넣어두고 한 것이 인상 깊었다.
 
 public class Solution {
