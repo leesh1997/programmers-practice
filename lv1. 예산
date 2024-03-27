@@ -25,6 +25,41 @@ class Solution {
     }
 }
 
+// 복습
+
+class Solution {
+    public int solution(int[] d, int budget) {
+        int answer = 0;
+        int sum = 0;
+        int temp = 0;
+        
+        for (int i = 0; i < d.length; i++)
+        {
+            for (int j = i + 1; j < d.length; j++)
+            {
+                if (d[i] > d[j])
+                {
+                    temp = d[i];
+                    d[i] = d[j];
+                    d[j] = temp;
+                }
+            }
+        }
+        
+        for (int i = 0; i < d.length; i++)
+        {
+            sum += d[i];
+            if (sum > budget)
+            {
+                break;
+            }
+            answer++;
+        }
+        
+        return answer;
+    }
+}
+
 // 다른 사람 풀이 (Arrays.sort 사용)
 
 import java.util.*;
